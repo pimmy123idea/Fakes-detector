@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cute Detector App</title>
+  <style>
+    body {
+      background-color: #d2b48c;
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      padding-top: 100px;
+      color: #333;
+      overflow-x: hidden;
+      animation: bodyFade 2s ease;
+    }
+
+    h1 {
+      font-size: 36px;
+      animation: fadeIn 1.5s ease-in-out;
+      background-color: #fff8dc;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .button {
+      padding: 20px 40px;
+      margin: 20px;
+      font-size: 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ffb6c1;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      animation: slideUp 1s ease forwards, glow 1.5s infinite alternate;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      background-color: #ff69b4;
+    }
+
+    .button:active {
+      animation: pop 0.2s;
+    }
+
+    @keyframes bodyFade {
+      0% { opacity: 0; transform: scale(1.02); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pop {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffb6c1;
+      }
+      to {
+        box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ Choose what you want to detect ✨</h1>
+
+  <button class="button" onclick="goTo('https://fake-news-detector-t4xn.onrender.com/')">
+    🔍 Fake News Detector
+  </button>
+
+  <button class="button" onclick="goTo('http://127.0.0.1:8000/')">
+    👻 Deepfake Detector
+  </button>
+
+  <script>
+    function goTo(url) {
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
